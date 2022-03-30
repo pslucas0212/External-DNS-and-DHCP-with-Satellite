@@ -1,12 +1,16 @@
 # External DNS and DHCP with Satellite
 
+[Tutorial Menu](https://github.com/pslucas0212/RedHat-Satellite-VM-Provisioning-to-vSphere-Tutorial)  
+
+
 In our previous multi-part tutorial we covered an end-to-end scenario for provisioning RHEL VMs from Satellite to a VMWare cluster.   In that series we had the Satellite installer install and configure both DNS and DHCP services on our Satellite server.  Often you will need to integrate Satellite with an existing DNS and DHCP services in your organization.
 
 In this tutorial we will cover the steps to integrate existing DNS and DHCP services.  We will use the same lab setup from the previous tutorial for our... 
 
 Steps used in installing and configuring DNS and DHCP used for this tutorial are covered in the appendix section of this article
 
-The real working for DNS integration with Satellite is in the setup of our DNS server which is covered in the appendix below.
+### Satellite DNS Integration
+The real work for DNS integration with Satellite is in the setup of our DNS server which is covered in the appendix below.
 
 After you have completed installing, configuring and testing the DNS server, you would run the following satellite-installer command to make the following persistent changes to the /etc/foreman-proxy/settings.d/dns.yml file:
 ```
@@ -23,7 +27,7 @@ Restart the foreman-proxy service:
 # systemctl restart foreman-proxy
 ```
       
-
+### Satellite DHCP Integration
 
 ## Appendix
 
@@ -278,5 +282,10 @@ Assign the foreman-proxy user to the named group manually.
 ```
 usermod -a -G named foreman-proxy
 ```
+
+### References
+- [How to configure the BIND DNS service](https://access.redhat.com/solutions/40683)
+- [How to configure Dynamic DNS Server on AlmaLinux / Rocky Linux](https://www.techbrown.com/configure-dynamic-dns-server-almalinux-rocky-linux/)
+
 
 
