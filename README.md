@@ -25,12 +25,10 @@ Restart the foreman-proxy service:
       
 
 
+## Appendix
 
-** Appendix
 
-*** Steps for installing and configure DNS and DHCP services.
-
-**** DNS Installation, Configuration and Testing
+### DNS Installation, Configuration and Testing
 
 **Note:** named is running on a RHEL 8.5 server updated in March 2022. For this example the subnet is 10.1.10.0/24 and domain is example.com
 
